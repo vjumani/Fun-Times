@@ -14,6 +14,7 @@ import com.henrysgrocery.model.Bill;
 import com.henrysgrocery.model.StockItem;
 
 public class BasketServiceTest {
+
 	@Test
 	public void givenSimpleBaskWithSoup_whenNoDiscountsApply_thenCalculatePricing() {
 		final BasketService basketService = new BasketService();
@@ -138,6 +139,7 @@ public class BasketServiceTest {
 		assertEquals(2.1d, bill.getBillingTotal());
 	}
 	
+	@Test
 	public void givenBasketOfApples_whenBoughtToday_thenApplyNoDiscount() {
 		final BasketService basketService = new BasketService();
 		final List<BasketItem> basketItems = new ArrayList<>();
@@ -147,6 +149,7 @@ public class BasketServiceTest {
 		assertEquals(0.1d, bill.getBillingTotal());
 	}
 	
+	@Test
 	public void givenBasketOfApples_whenBoughtIn3Days_thenApplyDiscount() {
 		final BasketService basketService = new BasketService();
 		final List<BasketItem> basketItems = new ArrayList<>();
@@ -156,6 +159,7 @@ public class BasketServiceTest {
 		assertEquals(0.09d, bill.getBillingTotal());
 	}
 	
+	@Test
 	public void givenBasketOfApples_whenBoughtAfter3Days_thenApplyDiscount() {
 		final BasketService basketService = new BasketService();
 		final List<BasketItem> basketItems = new ArrayList<>();
@@ -165,6 +169,7 @@ public class BasketServiceTest {
 		assertEquals(0.09d, bill.getBillingTotal());
 	}
 
+	@Test
 	public void givenBasketOfApples_whenBoughtAfterLastDay_thenApplyNoDiscount() {
 		final BasketService basketService = new BasketService();
 		final List<BasketItem> basketItems = new ArrayList<>();
