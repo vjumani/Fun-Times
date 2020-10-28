@@ -1,0 +1,27 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.henrysgrocery'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Lombok
+	compileOnly('org.projectlombok:lombok:1.18.8')
+	
+	// Lombok
+	annotationProcessor('org.projectlombok:lombok:1.18.8')
+	
+	// JUnit
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+}
+
+test {
+    useJUnitPlatform()
+}
